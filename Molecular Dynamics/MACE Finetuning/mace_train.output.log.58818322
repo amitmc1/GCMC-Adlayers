@@ -1,0 +1,79 @@
+2025-02-25 06:27:31.898 INFO: ===========VERIFYING SETTINGS===========
+2025-02-25 06:27:31.898 INFO: MACE version: 0.3.10
+2025-02-25 06:27:31.899 INFO: Using CPU
+2025-02-25 06:27:33.430 INFO: Using foundation model /scratch/c.c21127846/mace-mpa-0-medium.model as initial checkpoint.
+2025-02-25 06:27:33.430 INFO: Multihead finetuning mode, setting learning rate to 0.001 and EMA to True. To use a different learning rate, set --force_mh_ft_lr=True.
+2025-02-25 06:27:33.431 INFO: Using multiheads finetuning mode, setting learning rate to 0.001 and EMA to True
+2025-02-25 06:27:33.431 INFO: ===========LOADING INPUT DATA===========
+2025-02-25 06:27:33.431 INFO: Using heads: ['default']
+2025-02-25 06:27:33.431 INFO: =============    Processing head default     ===========
+2025-02-25 06:27:45.453 INFO: Training set [5921 configs, 5921 energy, 4962084 forces] loaded from '/nfshome/store01/users/c.c21127846/phd/week1/MACE/Finetuning/MACE_V3_data_final.xyz'
+2025-02-25 06:27:45.456 INFO: Using random 20% of training set for validation with indices saved in: ./valid_indices_3.txt
+2025-02-25 06:27:45.457 INFO: Validaton set contains 1184 configurations [1184 energy, 994974 forces]
+2025-02-25 06:27:45.457 INFO: Total number of configurations: train=4737, valid=1184, tests=[],
+2025-02-25 06:27:45.457 INFO: ==================Using multiheads finetuning mode==================
+2025-02-25 06:27:45.457 INFO: Using foundation model for multiheads finetuning with Materials Project data
+2025-02-25 06:27:45.458 INFO: Downloading MP structures for finetuning
+2025-02-25 06:27:55.649 INFO: Materials Project dataset to /home/c.c21127846/.cache/mace/mp_traj_combinedxyz
+2025-02-25 06:27:55.651 INFO: Downloading MP descriptors for finetuning
+2025-02-25 06:28:07.499 INFO: Materials Project descriptors to /home/c.c21127846/.cache/mace/descriptorsnpy
+2025-02-25 06:28:07.500 INFO: Using Materials Project dataset with /home/c.c21127846/.cache/mace/mp_traj_combinedxyz
+2025-02-25 06:28:07.500 INFO: Using Materials Project descriptors with /home/c.c21127846/.cache/mace/descriptorsnpy
+2025-02-25 06:28:08.032 INFO: Using CPU
+2025-02-25 06:28:21.173 INFO: Filtering configurations based on the finetuning set, filtering type: combinations, elements: ['Ni' 'O' 'S']
+2025-02-25 06:29:33.388 INFO: Number of configurations after filtering 157 is less than the number of samples 10000, selecting random configurations for the rest.
+2025-02-25 06:29:42.045 INFO: Saving the selected configurations
+2025-02-25 06:29:45.092 INFO: Saving a combined XYZ file
+2025-02-25 06:30:02.276 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-02-25 06:30:03.473 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-02-25 06:30:04.675 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-02-25 06:30:06.152 INFO: Training set [10000 configs, 10000 energy, 851421 forces] loaded from 'mp_finetuning-MACE_run-3.xyz'
+2025-02-25 06:30:06.160 INFO: Using random 20% of training set for validation with indices saved in: ./valid_indices_3.txt
+2025-02-25 06:30:06.162 INFO: Validaton set contains 2000 configurations [2000 energy, 167550 forces]
+2025-02-25 06:30:06.162 INFO: Total number of configurations in pretraining: train=8000, valid=2000
+2025-02-25 06:30:06.364 INFO: Atomic Numbers used: [1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 89, 90, 91, 92, 93, 94]
+2025-02-25 06:30:06.364 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-02-25 06:30:06.365 INFO: Atomic Energies used (z: eV) for head default: {8: -2051.987280435, 16: -10898.778210512, 28: -41613.130038157}
+2025-02-25 06:30:06.366 INFO: Atomic Energies used (z: eV) for head pt_head: {1: -1.11734008, 3: -0.29754725, 4: -0.01781697, 5: -0.26885011, 6: -1.26173507, 7: -3.12438806, 8: -1.54838784, 9: -0.51882044, 11: -0.22883163, 12: -0.00951015, 13: -0.21630193, 14: -0.8263903, 15: -1.88816619, 16: -0.89160769, 17: -0.25828273, 19: -0.22697913, 20: -0.0927795, 21: -2.11396364, 22: -2.50054871, 23: -3.70477179, 24: -5.60261985, 25: -5.32541181, 26: -3.52004933, 27: -1.93555024, 28: -0.9351969, 29: -0.60025846, 30: -0.1651332, 31: -0.32990651, 32: -0.77971828, 33: -1.68367812, 34: -0.76941032, 35: -0.22213843, 36: -0.0335879, 37: -0.1881724, 38: -0.06826294, 39: -2.17084228, 40: -2.28579303, 41: -3.13429753, 42: -4.60211419, 43: -3.45201492, 44: -2.38073513, 45: -1.46855515, 46: -1.4773126, 47: -0.33954585, 48: -0.16843877, 49: -0.35470981, 50: -0.83642657, 51: -1.41101987, 52: -0.65740879, 53: -0.18964571, 54: -0.00857582, 55: -0.13771876, 56: -0.03457659, 57: -0.45580806, 58: -1.3309175, 59: -0.29671824, 60: -0.30391193, 61: -0.30898427, 62: -0.25470891, 63: -8.38001538, 64: -10.38896525, 65: -0.3059505, 66: -0.30676216, 67: -0.30874667, 68: -0.31610927, 69: -0.25190039, 70: -0.06431414, 71: -0.31997586, 72: -3.52770927, 73: -3.54492209, 74: -4.65658356, 75: -4.70108713, 76: -2.88257209, 77: -1.46779304, 78: -0.50269936, 79: -0.28801193, 80: -0.12454674, 81: -0.31737194, 82: -0.77644932, 83: -1.32627283, 89: -0.26827152, 90: -0.90817426, 91: -2.47653193, 92: -4.90438537, 93: -7.63378961, 94: -10.77237713}
+2025-02-25 06:35:01.192 INFO: Average number of neighbors: 61.964672446250916
+2025-02-25 06:35:01.197 INFO: During training the following quantities will be reported: energy, forces, virials, stress
+2025-02-25 06:35:01.197 INFO: ===========MODEL DETAILS===========
+2025-02-25 06:35:17.059 INFO: Loading FOUNDATION model
+2025-02-25 06:35:17.061 INFO: Using filtered elements: [1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 89, 90, 91, 92, 93, 94]
+2025-02-25 06:35:17.061 INFO: Model configuration extracted from foundation model
+2025-02-25 06:35:17.061 INFO: Using universal loss function for fine-tuning
+2025-02-25 06:35:17.061 INFO: Message passing with hidden irreps 128x0e+128x1o)
+2025-02-25 06:35:17.061 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-02-25 06:35:17.061 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-02-25 06:35:17.061 INFO: Distance transform for radial basis functions: Agnesi
+2025-02-25 06:35:21.475 INFO: Total number of parameters: 8775518
+2025-02-25 06:35:21.475 INFO: 
+2025-02-25 06:35:21.476 INFO: ===========OPTIMIZER INFORMATION===========
+2025-02-25 06:35:21.476 INFO: Using ADAM as parameter optimizer
+2025-02-25 06:35:21.476 INFO: Batch size: 2
+2025-02-25 06:35:21.476 INFO: Using Exponential Moving Average with decay: 0.99999
+2025-02-25 06:35:21.476 INFO: Number of gradient updates: 318425
+2025-02-25 06:35:21.476 INFO: Learning rate: 0.0001, weight decay: 5e-07
+2025-02-25 06:35:21.476 INFO: UniversalLoss(energy_weight=1.000, forces_weight=1.000, stress_weight=1.000)
+2025-02-25 06:35:21.477 WARNING: Cannot find checkpoint with tag 'MACE_run-3' in './checkpoints'
+2025-02-25 06:35:21.484 INFO: Using gradient clipping with tolerance=10.000
+2025-02-25 06:35:21.484 INFO: 
+2025-02-25 06:35:21.484 INFO: ===========TRAINING===========
+2025-02-25 06:35:21.484 INFO: Started training, reporting errors on validation set
+2025-02-25 06:35:21.484 INFO: Loss metrics on validation set
+2025-02-25 06:42:34.491 INFO: Initial: head: pt_head, loss=0.00004607, RMSE_E_per_atom=   40.93 meV, RMSE_F=   97.92 meV / A, RMSE_stress=    7.70 meV / A^3
+2025-02-25 07:31:24.177 INFO: Initial: head: default, loss=0.00068111, RMSE_E_per_atom=  541.59 meV, RMSE_F=  604.38 meV / A, RMSE_stress=    5.26 meV / A^3
+2025-02-25 16:47:51.819 INFO: Epoch 0: head: pt_head, loss=0.00005788, RMSE_E_per_atom=   47.84 meV, RMSE_F=  107.70 meV / A, RMSE_stress=    7.55 meV / A^3
+2025-02-25 17:35:46.734 INFO: Epoch 0: head: default, loss=0.00001058, RMSE_E_per_atom=   31.59 meV, RMSE_F=   31.30 meV / A, RMSE_stress=    5.25 meV / A^3
+2025-02-26 02:50:39.881 INFO: Epoch 1: head: pt_head, loss=0.00006068, RMSE_E_per_atom=   47.90 meV, RMSE_F=  111.66 meV / A, RMSE_stress=    7.54 meV / A^3
+2025-02-26 03:36:51.281 INFO: Epoch 1: head: default, loss=0.00000723, RMSE_E_per_atom=   26.11 meV, RMSE_F=   26.10 meV / A, RMSE_stress=    4.71 meV / A^3
+2025-02-26 12:58:09.669 INFO: Epoch 2: head: pt_head, loss=0.00006279, RMSE_E_per_atom=   47.88 meV, RMSE_F=  114.40 meV / A, RMSE_stress=    7.46 meV / A^3
+2025-02-26 13:45:21.457 INFO: Epoch 2: head: default, loss=0.00000628, RMSE_E_per_atom=   25.59 meV, RMSE_F=   23.63 meV / A, RMSE_stress=    4.50 meV / A^3
+2025-02-26 23:02:47.146 INFO: Epoch 3: head: pt_head, loss=0.00006555, RMSE_E_per_atom=   48.50 meV, RMSE_F=  121.19 meV / A, RMSE_stress=    7.56 meV / A^3
+2025-02-26 23:49:44.395 INFO: Epoch 3: head: default, loss=0.00000590, RMSE_E_per_atom=   23.70 meV, RMSE_F=   22.30 meV / A, RMSE_stress=    4.29 meV / A^3
+2025-02-27 09:08:35.195 INFO: Epoch 4: head: pt_head, loss=0.00006777, RMSE_E_per_atom=   49.04 meV, RMSE_F=  125.25 meV / A, RMSE_stress=    7.57 meV / A^3
+2025-02-27 09:56:15.951 INFO: Epoch 4: head: default, loss=0.00000559, RMSE_E_per_atom=   23.61 meV, RMSE_F=   21.27 meV / A, RMSE_stress=    4.10 meV / A^3
+2025-02-27 19:24:38.373 INFO: Epoch 5: head: pt_head, loss=0.00006984, RMSE_E_per_atom=   49.98 meV, RMSE_F=  128.93 meV / A, RMSE_stress=    7.59 meV / A^3
+2025-02-27 20:11:31.919 INFO: Epoch 5: head: default, loss=0.00000536, RMSE_E_per_atom=   22.06 meV, RMSE_F=   20.57 meV / A, RMSE_stress=    4.03 meV / A^3
+2025-02-28 05:39:07.030 INFO: Epoch 6: head: pt_head, loss=0.00007165, RMSE_E_per_atom=   50.67 meV, RMSE_F=  132.03 meV / A, RMSE_stress=    7.66 meV / A^3
+2025-02-28 06:27:01.258 INFO: Epoch 6: head: default, loss=0.00000524, RMSE_E_per_atom=   21.23 meV, RMSE_F=   20.06 meV / A, RMSE_stress=    4.03 meV / A^3

@@ -1,0 +1,54 @@
+#!/bin/bash --login
+#SBATCH -n 1000
+#SBATCH --tasks-per-node=40
+#SBATCH --account=scw1057
+#SBATCH -J test_mace
+#SBATCH -o o.%J
+#SBATCH -e e.%J
+#SBATCH -t 0-72:00
+#SBATCH -p compute
+
+# Load the environment
+module purge
+module load python/3.11.2
+module load mpi
+
+# module approach to setting up working environment
+module use /apps/local/modules/projects
+
+. /nfshome/store01/users/c.c21127846/phd/week1/MACE/py_env/bin/activate
+
+# This is introduced as the default PYTHONPATH was changed in March 2022
+# Provides backwards compatibility
+export PYTHONPATH=$PYTHONPATH:/nfshome/store01/users/c.c21127846/phd/week1/MACE/py_env/lib/python3.11/site-packages
+
+ulimit -s unlimited
+
+
+export PYTHONPATH=/apps/local/projects/scw1057/software/github/carmm:$PYTHONPATH
+
+mace_run_train \
+    --name="MACE" \
+    --foundation_model="/scratch/c.c21127846/mace-mpa-0-medium.model" \
+    --multiheads_finetuning=True \
+    --train_file="/nfshome/store01/users/c.c21127846/phd/week1/MACE/Finetuning/MACE_V3_data_final.xyz" \
+    --valid_fraction=0.2 \
+    --energy_weight=1.0 \
+    --forces_weight=1.0 \
+    --E0s='{8:-2051.987280435, 16:-10898.778210512, 28:-41613.130038157}' \
+    --energy_key='ref_energy' \
+    --forces_key='ref_forces' \
+    --lr=0.01 \
+    --scaling="rms_forces_scaling" \
+    --batch_size=2 \
+    --max_num_epochs=40 \
+    --ema \
+    --ema_decay=0.99 \
+    --amsgrad \
+    --pt_train_file="mp" \
+    --default_dtype="float64" \
+    --device=cpu \
+    --seed=3 \
+    --restart_latest \
+    --save_cpu | tee mace_train.output.log.$SLURM_JOB_ID \
+
