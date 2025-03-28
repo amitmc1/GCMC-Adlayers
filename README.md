@@ -1,5 +1,5 @@
 # Machine learning accelerated multiscale modelling
-This repository contains data from the publication: Integrating statistical sampling and machine learning to model support effects on catalytic sulfur poisoning
+This repository contains data from the publication (under review): Machine learning accelerated multiscale modelling of support oxygen buffering effects on catalytic sulfur poisoning
 
 <p align="center">
   <img src="Overview.png" width="800" />
