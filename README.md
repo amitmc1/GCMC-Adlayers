@@ -1,5 +1,5 @@
 <div style="border: 2px solid #000; padding: 10px; margin-bottom: 20px;">
-  <h1 align="center">Machine learning accelerated multiscale modelling</h1>
+  <h1 align="center">Monte Carlo Sampling and ML Interatomic Potentials</h1>
   <p align="center">
     This repository contains data from the publication (under review): Support oxygen buffering as a mechanism for sulfur resistance in Ni-based reforming catalysts
   </p>
