@@ -1,0 +1,76 @@
+ data_GAMMA_publ
+
+
+# 8. Phase information from GSAS
+
+_pd_phase_name                         gamma
+_cell_length_a                         5.587
+_cell_length_b                         8.413
+_cell_length_c                         8.068
+_cell_angle_alpha                      90.0
+_cell_angle_beta                       90.59
+_cell_angle_gamma                      90.0
+_cell_volume                           379.20355
+_symmetry_cell_setting                 monoclinic
+_symmetry_space_group_name_H-M         "P 21/m"
+loop_ _symmetry_equiv_pos_site_id _symmetry_equiv_pos_as_xyz
+       1 +x,+y,+z 
+       2 -x,+y+1/2,-z 
+      -1 -x,-y,-z 
+      -2 +x,-y+1/2,+z 
+
+# ATOMIC COORDINATES AND DISPLACEMENT PARAMETERS
+
+
+loop_
+      _atom_site_type_symbol
+      _atom_site_label
+      _atom_site_fract_x
+      _atom_site_fract_y
+      _atom_site_fract_z
+      _atom_site_occupancy
+      _atom_site_thermal_displace_type
+      _atom_site_U_iso_or_equiv
+      _atom_site_symmetry_multiplicity
+Al
+Al1_2e  0.377        0.75         0.126        1.0        Uiso   0.025         2
+Al
+Al2_2e  0.868        0.25         0.498        1.0        Uiso   0.025         2
+Al
+Al3_2e  0.875        0.75         0.125        1.0        Uiso   0.025         2
+Al
+Al4_2e  0.615        0.75         0.745        1.0        Uiso   0.025         2
+Al
+Al5_4f  0.367        0.075        0.612        1.0        Uiso   0.025         4
+Al
+Al6_4f  0.116        0.579        0.862        1.0        Uiso   0.025         4
+O-
+O1_2e   0.881        0.75         0.874        1.0        Uiso   0.025         2
+O-
+O2_2e   0.614        0.25         0.64         1.0        Uiso   0.025         2
+O-
+O3_2e   0.364        0.75         0.889        1.0        Uiso   0.025         2
+O-
+O4_2e   0.132        0.25         0.627        1.0        Uiso   0.025         2
+O-
+O5_4f   0.889        0.406        0.899        1.0        Uiso   0.025         4
+O-
+O6_4f   0.605        0.917        0.614        1.0        Uiso   0.025         4
+O-
+O7_4f   0.357        0.406        0.853        1.0        Uiso   0.025         4
+O-
+O8_4f   0.138        0.916        0.637        1.0        Uiso   0.025         4
+
+loop_ _atom_type_symbol
+      _atom_type_number_in_cell
+                   O- 24.0        
+                   Al 16.0        
+ 
+# If you change Z, be sure to change all 3 of the following
+_chemical_formula_sum                  "Al2 O3"
+_chemical_formula_weight               101.96
+_cell_formula_units_Z                  8
+
+
+#--eof--eof--eof--eof--eof--eof--eof--eof--eof--eof--eof--eof--eof--eof--eof--#
+
