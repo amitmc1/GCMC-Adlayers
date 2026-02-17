@@ -3,7 +3,7 @@
 
   <ul style="list-style-position: inside; text-align: center; padding: 0; margin: 10px 0;">
     <li style="margin-bottom: 8px;">
-      This repository contains research code for the ChemRxiv manuscript: <a href="https://doi.org/10.26434/chemrxiv-2025-fgv2m" target="_blank" style="text-decoration: none; font-weight: bold; color: black;">
+      This repository contains research code for the Catalysis Science & Technology article: <a href="https://doi.org/10.1039/D5CY01279A" target="_blank" style="text-decoration: none; font-weight: bold; color: black;">
         <em>Ab initio</em> insights into support-induced sulfur resistance in Ni-based reforming catalysts  
     </li>
     <li>
